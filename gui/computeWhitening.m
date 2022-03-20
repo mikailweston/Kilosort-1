@@ -32,7 +32,7 @@ rez.ops.sampsToRead = rez.ops.tend-rez.ops.tstart;
 
 NTbuff      = NT + 4*ops.ntbuff;
 % Nbatch      = ceil(rez.ops.sampsToRead /(NT-ops.ntbuff));
-Nbatch = 2; % for the purposes of the gui, we only use two batches. It's not exactly the full whitening matrix, but it's close enough
+Nbatch = 8; % for the purposes of the gui, we only use two batches. It's not exactly the full whitening matrix, but it's close enough
 
 % by how many bytes to offset all the batches
 twind = rez.ops.tstart * NchanTOT*2;

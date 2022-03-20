@@ -691,7 +691,7 @@ classdef ksGUI < handle
 
             obj.ops.fs = str2num(obj.H.settings.setFsEdt.String);
             if isempty(obj.ops.fs)||isnan(obj.ops.fs)
-                obj.ops.fs = 30000;
+                obj.ops.fs = 25000;
             end
                         
             obj.ops.Th = str2num(obj.H.settings.setThEdt.String);
@@ -714,7 +714,7 @@ classdef ksGUI < handle
             
             obj.ops.trange = str2num(obj.H.settings.setTrangeEdt.String);
             if isempty(obj.ops.trange)||any(isnan(obj.ops.trange))
-                obj.ops.trange = [0 Inf];
+                obj.ops.trange = [100 150];
             end
             obj.H.settings.setTrangeEdt.String = num2str(obj.ops.trange);
             

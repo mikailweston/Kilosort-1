@@ -1,9 +1,7 @@
-%% you need to change most of the paths in this block
-
-addpath(genpath('D:\GitHub\Kilosort2')) % path to kilosort folder
-addpath('D:\GitHub\npy-matlab') % for converting to Phy
-rootZ = 'G:\Spikes\Sample'; % the raw data binary file is in this folder
-rootH = 'H:\'; % path to temporary binary file (same size as data, should be on fast SSD)
+addpath(genpath('C:\Users\mweston\Documents\GitHub\Kilosort')) % path to kilosort folder
+addpath('C:\Users\mweston\Documents\GitHub\npy-matlab') % for converting to Phy
+rootZ = 'F:\week2_pyecog_test\NP26_20200312_D14_imec0RB_imec1LB_g1_imec0'; % the raw data binary file is in this folder
+rootH = 'F:\week2_pyecog_test\kilosort'; % path to temporary binary file (same size as data, should be on fast SSD)
 pathToYourConfigFile = 'D:\GitHub\Kilosort2\configFiles'; % take from Github folder and put it somewhere else (together with the master_file)
 chanMapFile = 'neuropixPhase3A_kilosortChanMap.mat';
 
@@ -18,8 +16,10 @@ fprintf('Looking for data inside %s \n', rootZ)
 
 % main parameter changes from Kilosort2 to v2.5
 ops.sig        = 20;  % spatial smoothness constant for registration
-ops.fshigh     = 300; % high-pass more aggresively
+ops.fshigh     = 10; % high-pass more aggresively
 ops.nblocks    = 5; % blocks for registration. 0 turns it off, 1 does rigid registration. Replaces "datashift" option. 
+%ops.whiteningRange      = 32;
+
 
 % main parameter changes from Kilosort2.5 to v3.0
 ops.Th       = [9 9];
